@@ -63,29 +63,29 @@ function playRound(playerSelection, computerSelection){
 
 
 
-function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-    let roundScore = [playerScore, computerScore];
-    for (let i =0; i<5; i++){
-        let userInput = window.prompt("Please enter rock, paper, or scisssors");
-        let playerSelection = userInput.toLowerCase(); 
-        let computerSelection = getComputerChoice();
-        roundScore = playRound(playerSelection, computerSelection);
-        playerScore += parseInt(roundScore[0]);
-        computerScore += parseInt(roundScore[1]);
+// function game(){
+//     let playerScore = 0;
+//     let computerScore = 0;
+//     let roundScore = [playerScore, computerScore];
+//     for (let i =0; i<5; i++){
+//         let userInput = window.prompt("Please enter rock, paper, or scisssors");
+//         let playerSelection = userInput.toLowerCase(); 
+//         let computerSelection = getComputerChoice();
+//         roundScore = playRound(playerSelection, computerSelection);
+//         playerScore += parseInt(roundScore[0]);
+//         computerScore += parseInt(roundScore[1]);
 
-    }
-    if (playerScore > computerScore){
-        console.log("Player Wins");
-    }
-    else if (computerScore > playerScore){
-        console.log("Computer wins");
-    }
-    else {
-        console.log("It's a tie!");
-        console.log(playerScore + " " + computerScore);
-};
-}
+//     }
+//     if (playerScore > computerScore){
+//         console.log("Player Wins");
+//     }
+//     else if (computerScore > playerScore){
+//         console.log("Computer wins");
+//     }
+//     else {
+//         console.log("It's a tie!");
+//         console.log(playerScore + " " + computerScore);
+// };
+// }
 
-game();
+// game();
