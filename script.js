@@ -18,45 +18,72 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     let playerScore = 0;
     let computerScore = 0;
+    const announcingWinner = document.createElement('p');
+    announcingWinner.style.color = "blue";
+    announcingWinner.style.fontSize = 20 ;
+    const results = document.getElementsByClassName("results");
+
+    
 
 
     if(playerSelection == "rock" && computerSelection == "scissors"){
         playerScore++;
-        console.log("You win! rock beats scissors");
+        announcingWinner.textContent = "You win! rock beats scissors";
+        runningScore = playerScore + "-" + computerScore;
+      
+        
     }
     else if(playerSelection == "rock" && computerSelection == "paper"){
        computerScore++;
-        console.log("You lose! paper beats rock");
+       announcingWinner.textContent= "You lose! paper beats rock";
+       results[0].appendChild(announcingWinner);
+    
     }
     else if(playerSelection == "rock" && computerSelection == "rock"){
-        console.log("Tie Bozo!");
+        announcingWinner.textContent = "Tie Bozo!";
+        results[0].appendChild(announcingWinner);
+       
     }
 
     else if(playerSelection == "scissors" && computerSelection == "rock"){
         computerScore++;
-        console.log("You lose! rock beats scissors");
+        announcingWinner.textContent= "You lose! rock beats scissors";
+        results[0].appendChild(announcingWinner);
+       
     }
     else if(playerSelection == "scissors" && computerSelection == "paper"){
         playerScore++;
-        console.log("You win! scissors beats paper");
+        announcingWinner.textContent= "You win! scissors beats paper";
+        results[0].appendChild(announcingWinner);
+        
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
-        console.log("Tie Bozo!");
+        announcingWinner.textContent= "Tie Bozo!";
+        results[0].appendChild(announcingWinner);
+      
     }
 
     else if(playerSelection == "paper" && computerSelection == "rock"){
         playerScore++;
-        console.log("You win! paper beats rock");
+        announcingWinner.textContent = "You win! paper beats rock";
+        results[0].appendChild(announcingWinner);
+     
     }
     else if(playerSelection == "paper" && computerSelection == "scissors"){
         computerScore++;
-        console.log("You lose! scissors beats paper");
+        announcingWinner.textContent = "You lose! scissors beats paper";
+        results[0].appendChild(announcingWinner);
+     
     }
     else if(playerSelection == "paper" && computerSelection == "paper"){
-        console.log("Tie Bozo!");
+        announcingWinner.textContent = "Tie Bozo!";
+        results[0].appendChild(announcingWinner);
+     
     }
     else{
-        console.log("Did you break my mf code!?");
+        announcingWinner.textContent = "Did you break my mf code!?";
+        results[0].appendChild(announcingWinner);
+      
     }
         return [playerScore, computerScore];
     }
