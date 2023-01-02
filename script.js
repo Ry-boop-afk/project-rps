@@ -19,40 +19,41 @@ function playRound(playerSelection, computerSelection){
     let playerScore = 0;
     let computerScore = 0;
 
+
     if(playerSelection == "rock" && computerSelection == "scissors"){
         playerScore++;
-        // console.log("You win! rock beats scissors");
+        console.log("You win! rock beats scissors");
     }
     else if(playerSelection == "rock" && computerSelection == "paper"){
        computerScore++;
-        // console.log("You lose! paper beats rock");
+        console.log("You lose! paper beats rock");
     }
     else if(playerSelection == "rock" && computerSelection == "rock"){
-        // console.log("Tie Bozo!");
+        console.log("Tie Bozo!");
     }
 
     else if(playerSelection == "scissors" && computerSelection == "rock"){
         computerScore++;
-        // console.log("You lose! rock beats scissors");
+        console.log("You lose! rock beats scissors");
     }
     else if(playerSelection == "scissors" && computerSelection == "paper"){
         playerScore++;
-        // console.log("You win! scissors beats paper");
+        console.log("You win! scissors beats paper");
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
-        // console.log("Tie Bozo!");
+        console.log("Tie Bozo!");
     }
 
     else if(playerSelection == "paper" && computerSelection == "rock"){
         playerScore++;
-        // console.log("You win! paper beats rock");
+        console.log("You win! paper beats rock");
     }
     else if(playerSelection == "paper" && computerSelection == "scissors"){
         computerScore++;
-        // console.log("You lose! scissors beats paper");
+        console.log("You lose! scissors beats paper");
     }
     else if(playerSelection == "paper" && computerSelection == "paper"){
-        // console.log("Tie Bozo!");
+        console.log("Tie Bozo!");
     }
     else{
         console.log("Did you break my mf code!?");
@@ -60,6 +61,18 @@ function playRound(playerSelection, computerSelection){
         return [playerScore, computerScore];
     }
 
+    //Event Listener will listen for a button click and then call playRound based upon the User's choice
+    const btn = document.getElementsByClassName("btn");
+   
+    btn[0].addEventListener('click', () => playRound(btn[0].innerText.toLowerCase(), getComputerChoice()));
+    btn[1].addEventListener('click', () => playRound(btn[1].innerText.toLowerCase(), getComputerChoice()));
+    btn[2].addEventListener('click', () => playRound(btn[2].innerText.toLowerCase(), getComputerChoice()));
+
+
+   
+    // btn.addEventListener('click', function (e) {
+    //     console.log(e);
+    // });
 
 
 

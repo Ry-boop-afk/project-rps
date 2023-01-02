@@ -6,8 +6,13 @@
     width: auto;
     border: 2px solid;
     background: #ff0;
+    gap: 16px;
 }
 .btn{
     display: flex;
     justify-content: center;
+    align-items: center;
+    width:200px;
+    height: 200px;
+    font-size: 24px;
 }
